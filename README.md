@@ -13,7 +13,8 @@ Add code to provide both HTML and JSON responses to the #index and #show actions
 
 
 
-```def index
+```
+def index
   @kittens = Kitten.all
 
   respond_to do |format|
@@ -30,7 +31,8 @@ Add code to the Kitten model to specify which attributes to include in the JSON 
 
 
 
-```def as_json(options={})
+```
+def as_json(options={})
   {:name => self.name, 
    :age => self.age,
    :cuteness => self.cuteness, 
