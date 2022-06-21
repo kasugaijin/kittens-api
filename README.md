@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This simple Kittens application was built to practice creating an API. It has a single table, Kittens, and the user can perform CRUD actions on the Kitten model.
 
-Things you may want to cover:
+This project was generated using Rails Scaffold, so the default controller actions and view files, complete with json.jbuilders were in place. 
 
-* Ruby version
+RestClient was used to make a request to the server for a JSON file for the index page, and for the show page of a specific instance of the Kitten model, using :id. 
 
-* System dependencies
+If I was to build this from scratch, and not rely on the default scaffold code to generate JSON output, I would do the following... 
 
-* Configuration
+**Kittens Controller**
+Add code to provide both HTML and JSON responses to the #index and #show actions. For example:
 
-* Database creation
+def index
+  @kittens = Kitten.all
 
-* Database initialization
+  respond_to do |format|
+    format.html
+    format.json { render :json => @kittens }
+  end
+end
 
-* How to run the test suite
+**Kitten Model**
+Add code to the Kitten model to specify which attributes to include in the JSON file.
 
-* Services (job queues, cache servers, search engines, etc.)
+def as_json(options={})
+  {:name => self.name, 
+   :age => self.age,
+   :cuteness => self.cuteness, 
+   :softness => self.softness }
+end
 
-* Deployment instructions
-
-* ...
