@@ -6,6 +6,20 @@ This project was generated using Rails Scaffold, so the default controller actio
 
 RestClient was used to make a request to the server for a JSON file for the index page, and for the show page of a specific instance of the Kitten model, using :id. 
 
+A request such as: 
+
+
+`RestClient.get('http://localhost:3000/kittens/4', :accept => :json)`
+
+
+Returns a response: 
+
+
+`"{\"id\":4,\"name\":\"Stinky\",\"age\":5,\"cuteness\":3,\"softness\":1,\"url\":\"http://localhost:3000/kittens/4.json\"}"`
+
+
+
+
 If I was to build this from scratch, and not rely on the default scaffold code to generate JSON output, I would do the following... 
 
 **Kittens Controller**
