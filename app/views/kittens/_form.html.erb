@@ -1,8 +1,15 @@
 <%= form_with(model: kitten) do |form| %>
+  <%= form.label :name, 'Name' %>
+  <%= form.text_field :name %><br>
+  <%= form.label :age %>
+  <%= form.select :age, (0..25), { prompt: 'age' } %><br>
+  <%= form.label :cuteness %>
+  <%= form.select :cuteness, (0..10), { prompt: 'cuteness' } %><br>
+  <%= form.label :softness %>
+  <%= form.select :softness, (0..10), { prompt: 'softness' } %>
+
   <% if kitten.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(kitten.errors.count, "error") %> prohibited this kitten from being saved:</h2>
-
       <ul>
         <% kitten.errors.each do |error| %>
           <li><%= error.full_message %></li>

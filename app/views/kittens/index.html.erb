@@ -1,14 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Kittens</h1>
+<%= link_to "New kitten", new_kitten_path %>
 
 <div id="kittens">
   <% @kittens.each do |kitten| %>
-    <%= render kitten %>
-    <p>
-      <%= link_to "Show this kitten", kitten %>
-    </p>
+    <div style='border: solid 2px black; width: 300px'>
+      <p>Name: <%= kitten.name %></p>
+      <p>Age: <%= kitten.age %></p>
+      <p>Cuteness: <%= kitten.cuteness %></p>
+      <p>Softness: <%= kitten.softness %></p>
+      <p><%= link_to "Show this kitten", kitten %></p>
+      <%= button_to "Destroy this kitten", kitten, method: :delete %>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New kitten", new_kitten_path %>
+
