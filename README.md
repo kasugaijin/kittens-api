@@ -11,6 +11,8 @@ If I was to build this from scratch, and not rely on the default scaffold code t
 **Kittens Controller**
 Add code to provide both HTML and JSON responses to the #index and #show actions. For example:
 
+
+
 ```def index
   @kittens = Kitten.all
 
@@ -20,8 +22,12 @@ Add code to provide both HTML and JSON responses to the #index and #show actions
   end
 end```
 
+
+
 **Kitten Model**
 Add code to the Kitten model to specify which attributes to include in the JSON file.
+
+
 
 ```def as_json(options={})
   {:name => self.name, 
@@ -29,4 +35,7 @@ Add code to the Kitten model to specify which attributes to include in the JSON 
    :cuteness => self.cuteness, 
    :softness => self.softness }
 end```
+
+
+
 
