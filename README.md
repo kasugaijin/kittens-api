@@ -20,7 +20,8 @@ Add code to provide both HTML and JSON responses to the #index and #show actions
     format.html
     format.json { render :json => @kittens }
   end
-end```
+end
+```
 
 
 
@@ -34,7 +35,8 @@ Add code to the Kitten model to specify which attributes to include in the JSON 
    :age => self.age,
    :cuteness => self.cuteness, 
    :softness => self.softness }
-end```
+end
+```
 
 
 
